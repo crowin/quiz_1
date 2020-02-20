@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.home.qa'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:7.0.0'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+
+    compile 'com.konghq:unirest-java:3.5.00'
+    compile 'com.konghq:unirest-object-mappers-gson:3.5.00'
+    compile 'org.projectlombok:lombok:1.18.8'
+    compile 'org.apache.commons:commons-lang3:3.7'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/suites/testsuite.xml'
+    }
+}
